@@ -1,3 +1,5 @@
+<link rel="shortcut icon" href="assets/images/close.png">
+
 <?php 
 
  if(isset($_Get['action'])){

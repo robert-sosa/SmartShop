@@ -80,7 +80,7 @@ header('location:my-wishlist.php');
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 		
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="assets/images/favicon.ico">
+		<link rel="shortcut icon" href="assets/images/close.png">
 
 		<!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
 		<!--[if lt IE 9]>
@@ -170,11 +170,11 @@ while($row=mysqli_fetch_array($sql))
 	<div id="category" class="category-carousel hidden-xs">
 		<div class="item">	
 			<div class="image">
-				<img src="assets/images/banners/cat-banner-1.jpg" alt="" class="img-responsive">
+				<img src="assets/images/banners/category.jpg" alt="" >
 			</div>
 			<div class="container-fluid">
 				<div class="caption vertical-top text-left">
-					<div class="big-text">
+					<div class="big-text ">
 						<br />
 					</div>
 
@@ -210,7 +210,7 @@ while ($row=mysqli_fetch_array($ret))
 	<div class="product">		
 		<div class="product-image">
 			<div class="image">
-				<a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><img  src="assets/images/blank.gif" data-echo="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>" alt="" width="200" height="300"></a>
+				<a href="product-details.php?pid=<?php echo htmlentities($row['id']);?>"><img  src="assets/images/blank.gif" data-echo="admin/productimages/<?php echo htmlentities($row['id']);?>/<?php echo htmlentities($row['productImage1']);?>" alt="" width="200" ></a>
 			</div><!-- /.image -->			                      		   
 		</div><!-- /.product-image -->
 			
@@ -222,8 +222,8 @@ while ($row=mysqli_fetch_array($ret))
 
 			<div class="product-price">	
 				<span class="price">
-					$. <?php echo htmlentities($row['productPrice']);?>			</span>
-										     <span class="price-before-discount">$. <?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
+					$ <?php echo htmlentities($row['productPrice']);?>			</span>
+										     <span class="price-before-discount">$ <?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
 									
 			</div><!-- /.product-price -->
 			
@@ -232,18 +232,13 @@ while ($row=mysqli_fetch_array($ret))
 				<div class="action">
 					<ul class="list-unstyled">
 						<li class="add-cart-button btn-group">
-							<button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-								<i class="fa fa-shopping-cart"></i>													
+
+							<button class="btn-primary icon" type="button">
+								<i class="fa fa-shopping-cart inner-right-vs"></i>													
 							</button>
 							<a href="category.php?page=product&action=add&id=<?php echo $row['id']; ?>">
-							<button class="btn btn-primary" type="button">Agregar a carrito</button></a>
+							<button class="btn btn-primary btn-lg " type="button">Agregar a carrito</button></a>
 													
-						</li>
-	                   
-		                <li class="lnk wishlist">
-							<a class="add-to-cart" href="category.php?pid=<?php echo htmlentities($row['id'])?>&&action=wishlist" title="Wishlist">
-								 <i class="icon fa fa-heart"></i>
-							</a>
 						</li>
 
 						

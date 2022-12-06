@@ -76,7 +76,7 @@ if(isset($_POST['submit']))
 
         <!-- Fonts --> 
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
-		<link rel="shortcut icon" href="assets/images/favicon.ico">
+		<link rel="shortcut icon" href="assets/images/close.png">
 	</head>
     <body class="cnt-home">
 	
@@ -93,26 +93,9 @@ if(isset($_POST['submit']))
 </header>
 
 <!-- ============================================== HEADER : END ============================================== -->
-<div class="breadcrumb">
-	<div class="container">
-		<div class="breadcrumb-inner">
-<?php
-$ret=mysqli_query($con,"select category.categoryName as catname,subCategory.subcategory as subcatname,products.productName as pname from products join category on category.id=products.category join subcategory on subcategory.id=products.subCategory where products.id='$pid'");
-while ($rw=mysqli_fetch_array($ret)) {
-
-?>
 
 
-			<ul class="list-inline list-unstyled">
-				<li><a href="index.php">Inicio</a></li>
-				<li><?php echo htmlentities($rw['catname']);?></a></li>
-				<li><?php echo htmlentities($rw['subcatname']);?></li>
-				<li class='active'><?php echo htmlentities($rw['pname']);?></li>
-			</ul>
-			<?php }?>
-		</div><!-- /.breadcrumb-inner -->
-	</div><!-- /.container -->
-</div><!-- /.breadcrumb -->
+
 <div class="body-content outer-top-xs">
 	<div class='container'>
 		<div class='row single-product outer-bottom-sm '>
@@ -364,7 +347,7 @@ $num=mysqli_num_rows($rt);
 				</div><!-- /.row -->
 
 				
-				<div class="product-tabs inner-bottom-xs  wow fadeInUp">
+				<div class=" product-tabs inner-bottom-xs  wow fadeInUp">
 					<div class="row">
 						<div class="col-sm-3">
 							<ul id="product-tabs" class="nav nav-tabs nav-tab-cell">

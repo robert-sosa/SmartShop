@@ -11392,8 +11392,8 @@ section {
 }
 
 .device[data-device=iPhoneX][data-orientation=portrait][data-color=black]::after {
-  
-  background-image: url("img/portrait_black.png");
+  content: "";
+  background-image: url("../img/portrait_black.png");
 }
 
 .device[data-device=iPhoneX][data-orientation=portrait][data-color=black] .button {

@@ -192,7 +192,7 @@ echo htmlentities($_SESSION['errmsg']="");
 		<div class="radio outer-xs">
 		  	<a href="forgot-password.php" class="forgot-password pull-right">¿Olvidaste tu contraseña?</a>
 		</div>
-	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button" name="login">Iniciar Sesión</button>
+	  	<button type="submit" class="btn-lg btn-upper btn btn-primary checkout-page-button" name="login">Iniciar Sesión</button>
 	</form>					
 </div>
 <!-- Sign-in -->
@@ -230,7 +230,7 @@ echo htmlentities($_SESSION['errmsg']="");
 	  	</div>
 
 
-	  	<button type="submit" name="submit" class="btn-upper btn btn-primary checkout-page-button" id="submit">Registrarse</button>
+	  	<button type="submit" name="submit" class="btn-lg btn-upper btn btn-primary checkout-page-button" id="submit">Registrarse</button>
 	</form>
 	<span class="checkout-subtitle outer-top-xs">Registrate ahora y obten nuestros beneficios :  </span>
 	<div class="checkbox">
