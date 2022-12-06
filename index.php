@@ -29,7 +29,7 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 
-	    <title>SmartShop- Pagina principal</title>
+	    <title>SmartShop- Pagina principal </title>
 
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -167,7 +167,7 @@ if(isset($_GET['action']) && $_GET['action']=="add"){
 			   <h3 class="new-product-title pull-left">Productos Destacados</h3>
 				<ul class="nav nav-tabs nav-tab-line pull-right" id="new-products-1">
 					
-				
+
 				</ul><!-- /.nav-tabs -->
 			</div>
 
