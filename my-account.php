@@ -14,7 +14,7 @@ else{
 		$query=mysqli_query($con,"update users set name='$name',contactno='$contactno' where id='".$_SESSION['id']."'");
 		if($query)
 		{
-echo "<script>alert('Your info has been updated');</script>";
+echo "<script>alert('Su informacion ha sido actualizada');</script>";
 		}
 	}
 
@@ -113,7 +113,6 @@ return true;
     <body class="cnt-home">
 <header class="header-style-1">
 
-	<!-- ============================================== TOP MENU ============================================== -->
 <!-- ============================================== TOP MENU : END ============================================== -->
 <?php include('includes/main-header.php');?>
 	<!-- ============================================== NAVBAR ============================================== -->

@@ -79,7 +79,7 @@ else{
 	<!-- panel-heading -->
 		<div class="panel-heading">
     	<h4 class="unicase-checkout-title">
-	        <a data-toggle="collapse" class="" data-parent="#accordion" href="#collapseOne">
+	        <a data-toggle="collapse" class="" data-parent="" href="#collapseOne">
 	         Seleccione tipo de pago
 	        </a>
 	     </h4>
@@ -104,6 +104,16 @@ else{
 	</div><!-- row -->
 </div>
 <!-- checkout-step-01  -->
+
+        <form name="payment" method="post">
+
+	     <input type="radio" name="paymethod" value="COD" checked="checked"> Contraentrega
+	     <input type="radio" name="paymethod" value="Internet Banking"> Banca Internet
+	     <input type="radio" name="paymethod" value="Debit / Credit card"> Tarjeta de Crédito/Debito<br /><br />
+	     <input type="submit" value="CONTINUAR" name="submit" class="btn btn-primary btn-large ">
+	    	
+
+	    </form>
 					  
 					  	
 					</div><!-- /.checkout-steps -->
@@ -111,7 +121,6 @@ else{
 			</div><!-- /.row -->
 		</div><!-- /.checkout-box -->
 		<!-- ============================================== BRANDS CAROUSEL ============================================== -->
-<?php echo include('includes/brands-slider.php');?>
 <!-- ============================================== BRANDS CAROUSEL : END ============================================== -->	</div><!-- /.container -->
 </div><!-- /.body-content -->
 <?php include('includes/footer.php');?>
