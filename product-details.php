@@ -142,64 +142,6 @@ while($row=mysqli_fetch_array($sql))
 	    </div>
 	</div>
 </div>
-	<!-- ============================================== CATEGORY : END ============================================== -->					<!-- ============================================== HOT DEALS ============================================== -->
-<div class="sidebar-widget hot-deals wow fadeInUp">
-	<h3 class="section-title">LAS MEJORES OFERTAS</h3>
-	<div class="owl-carousel sidebar-carousel custom-carousel owl-theme outer-top-xs">
-		
-								   <?php
-$ret=mysqli_query($con,"select * from products order by rand() limit 4 ");
-while ($rws=mysqli_fetch_array($ret)) {
-
-?>
-
-								        
-													<div class="item">
-					<div class="products">
-						<div class="hot-deal-wrapper">
-							<div class="image">
-								<img src="admin/productimages/<?php echo htmlentities($rws['productName']);?>/<?php echo htmlentities($rws['productImage1']);?>"  width="200" height="334" alt="">
-							</div>
-							
-						</div><!-- /.hot-deal-wrapper -->
-
-						<div class="product-info text-left m-t-20">
-							<h3 class="name"><a href="product-details.php?pid=<?php echo htmlentities($rws['id']);?>"><?php echo htmlentities($rws['productName']);?></a></h3>
-							<div class="rating rateit-small"></div>
-
-							<div class="product-price">	
-								<span class="price">
-									$. <?php echo htmlentities($rws['productPrice']);?>.00
-								</span>
-									
-							    <span class="price-before-discount">$.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>					
-							
-							</div><!-- /.product-price -->
-							
-						</div><!-- /.product-info -->
-
-						<div class="cart clearfix animate-effect">
-							<div class="action">
-								
-								<div class="add-cart-button btn-group">
-									<button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-								<i class="fa fa-shopping-cart"></i>													
-							</button>
-						<a href="product-details.php?page=product&action=add&id=<?php echo $rws['id']; ?>" class="lnk btn btn-primary" style="height:34px;padding-top: 5px;">Agregar a carrito</a>
-						
-													
-															
-								</div>
-								
-							</div><!-- /.action -->
-						</div><!-- /.cart -->
-					</div>	
-					</div>		
-					<?php } ?>        
-						
-	    
-    </div><!-- /.sidebar-widget -->
-</div>
 
 <!-- ============================================== COLOR: END ============================================== -->
 				</div>
@@ -368,23 +310,15 @@ $num=mysqli_num_rows($rt);
 
 									<div class="col-sm-6">
 										<div class="price-box">
-											<span class="price">$. <?php echo htmlentities($row['productPrice']);?></span>
-											<span class="price-strike">$.<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
+											<span class="price">$ <?php echo htmlentities($row['productPrice']);?></span>
+											<span class="price-strike">$<?php echo htmlentities($row['productPriceBeforeDiscount']);?></span>
 										</div>
 									</div>
 
 
 
 
-									<div class="col-sm-6">
-										<div class="favorite-button m-t-10">
-											<a class="btn btn-primary" data-toggle="tooltip" data-placement="right" title="Lista de deseos" href="product-details.php?pid=<?php echo htmlentities($row['id'])?>&&action=wishlist">
-											    <i class="fa fa-heart"></i>
-											</a>
-											
-											</a>
-										</div>
-									</div>
+									
 
 								</div><!-- /.row -->
 							</div><!-- /.price-container -->
@@ -413,26 +347,14 @@ $num=mysqli_num_rows($rt);
 							            </div>
 									</div>
 
-									<div class="col-sm-7">
-										<a href="product-details.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="btn btn-primary"><i class="fa fa-shopping-cart inner-right-vs"></i> Agregar a compras</a>
+									<div class="col-sm-7 h2">
+										<a href="product-details.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="btn btn-primary btn-lg"><i class="fa fa-shopping-cart inner-right-vs"></i> Agregar a compras</a>
 									</div>
 
 									
 								</div><!-- /.row -->
 							</div><!-- /.quantity-container -->
 
-							<div class="product-social-link m-t-20 text-right">
-								<span class="social-label">Compartir:</span>
-								<div class="social-icons">
-						            <ul class="list-inline">
-						                <li><a class="fa fa-facebook" href="https://facebook.com/platea21"></a></li>
-						                <li><a class="fa fa-twitter" href="https://facebook.com/platea21"></a></li>
-						                <li><a class="fa fa-linkedin" href="https://facebook.com/platea21"></a></li>
-						                <li><a class="fa fa-rss" href="https://facebook.com/platea21"></a></li>
-						                <li><a class="fa fa-pinterest" href="https://facebook.com/platea21"></a></li>
-						            </ul><!-- /.social-icons -->
-						        </div>
-							</div>
 
 							
 
@@ -447,7 +369,7 @@ $num=mysqli_num_rows($rt);
 						<div class="col-sm-3">
 							<ul id="product-tabs" class="nav nav-tabs nav-tab-cell">
 								<li class="active"><a data-toggle="tab" href="#description">DESCRIPCIÓN</a></li>
-								<li><a data-toggle="tab" href="#review">CALIFICACIONES</a></li>
+								
 							</ul><!-- /.nav-tabs #product-tabs -->
 						</div>
 						<div class="col-sm-9">
@@ -610,8 +532,8 @@ while($rw=mysqli_fetch_array($qry))
 
 			<div class="product-price">	
 				<span class="price">
-					$.<?php echo htmlentities($rw['productPrice']);?>			</span>
-										     <span class="price-before-discount">$.
+					$<?php echo htmlentities($rw['productPrice']);?>			</span>
+										     <span class="price-before-discount">$
 										     <?php echo htmlentities($rw['productPriceBeforeDiscount']);?></span>
 									
 			</div><!-- /.product-price -->
@@ -624,7 +546,7 @@ while($rw=mysqli_fetch_array($qry))
 							<button class="btn btn-primary icon" data-toggle="dropdown" type="button">
 								<i class="fa fa-shopping-cart"></i>													
 							</button>
-						<a href="product-details.php?page=product&action=add&id=<?php echo $rw['id']; ?>" class="lnk btn btn-primary">Agregar a carrito</a>
+						<a href="product-details.php?page=product&action=add&id=<?php echo $rw['id']; ?>" class="lnk btn btn-primary btn-lg">Agregar a carrito</a>
 													
 						</li>
 	                   

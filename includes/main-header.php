@@ -28,7 +28,7 @@
     <form name="search" method="post" action="search-result.php">
         <div class="control-group">
 
-            <input class="search-field" placeholder="Buscar aqui..." name="product" required="required" />
+            <input class="search-field h5" placeholder="Buscar aqui..." name="product" required="required" />
 
             <button class="search-button" type="submit" name="search"></button>    
 
@@ -44,7 +44,7 @@ if(!empty($_SESSION['cart'])){
 	?>
 	<div class="dropdown dropdown-cart">
 		<a href="#" class="dropdown-toggle lnk-cart" data-toggle="dropdown">
-			<div class="items-cart-inner">
+			<div class="items-cart-inner h4">
 				<div class="total-price-basket">
 					<span class="lbl">Carrito -</span>
 					<span class="total-price">

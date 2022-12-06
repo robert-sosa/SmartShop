@@ -108,19 +108,20 @@ header('location:my-wishlist.php');
 		<div class='row outer-bottom-sm'>
 			<div class='col-md-3 sidebar'>
 	            <!-- ================================== TOP NAVIGATION ================================== -->
+
 <div class="side-menu animate-dropdown outer-bottom-xs">       
 <div class="side-menu animate-dropdown outer-bottom-xs">
-    <div class="head"><i class="icon fa fa-align-justify fa-fw"></i>Sub Categoria</div>        
+    <div class="head text-bg-primary"><i class="icon fa fa-align-justify fa-fw"></i>Sub Categoria</div>        
     <nav class="yamm megamenu-horizontal" role="navigation">
   
         <ul class="nav">
-            <li class="dropdown menu-item">
+            <li class="dropdown menu-item h4">
               <?php $sql=mysqli_query($con,"select id,subcategory  from subcategory where categoryid='$cid'");
 
 while($row=mysqli_fetch_array($sql))
 {
     ?>
-                <a href="sub-category.php?scid=<?php echo $row['id'];?>" class="dropdown-toggle"><i class="icon fa fa-desktop fa-fw"></i>
+                <a href="sub-category.php?scid=<?php echo $row['id'];?>" class="dropdown-toggle"><i class="icon fa fa-fw"></i>
                 <?php echo $row['subcategory'];?></a>
                 <?php }?>
                         
