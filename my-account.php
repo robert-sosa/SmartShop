@@ -30,7 +30,7 @@ $num=mysqli_fetch_array($sql);
 if($num>0)
 {
  $con=mysqli_query($con,"update students set password='".md5($_POST['newpass'])."', updationDate='$currentTime' where id='".$_SESSION['id']."'");
-echo "<script>alert('Password Changed Successfully !!');</script>";
+echo "<script>alert('Cambio de contraseña exitoso!!');</script>";
 }
 else
 {
@@ -151,7 +151,7 @@ return true;
     </div>
     <!-- panel-heading -->
 
-	<div id="collapseOne" class="panel-collapse collapse in">
+	<div id="collapseOne" class="">
 
 		<!-- panel-body  -->
 	    <div class="panel-body">
@@ -203,7 +203,7 @@ while($row=mysqli_fetch_array($query))
 						        </a>
 						      </h4>
 						    </div>
-						    <div id="collapseTwo" class="panel-collapse collapse">
+						    <div id="collapseTwo" class="">
 						      <div class="panel-body">
 						     
 					<form class="register-form" role="form" method="post" name="chngpwd" onSubmit="return valid();">

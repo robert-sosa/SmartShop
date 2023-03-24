@@ -32,7 +32,7 @@ echo "<script>alert('Dirección de facturación a sido actualizada');</script>";
 		$query=mysqli_query($con,"update users set shippingAddress='$saddress',shippingState='$sstate',shippingCity='$scity',shippingPincode='$spincode' where id='".$_SESSION['id']."'");
 		if($query)
 		{
-echo "<script>alert('Shipping Address has been updated');</script>";
+echo "<script>alert('La dirección de envío ha sido actualizada');</script>";
 		}
 	}
 
@@ -123,7 +123,7 @@ echo "<script>alert('Shipping Address has been updated');</script>";
     </div>
     <!-- panel-heading -->
 
-	<div id="collapseOne" class="panel-collapse collapse in">
+	<div id="collapseOne" class="">
 
 		<!-- panel-body  -->
 	    <div class="panel-body">
@@ -180,7 +180,7 @@ while($row=mysqli_fetch_array($query))
 						        </a>
 						      </h4>
 						    </div>
-						    <div id="collapseTwo" class="panel-collapse collapse">
+						    <div id="collapseTwo" class="">
 						      <div class="panel-body">
 						     
 				<?php

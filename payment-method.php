@@ -86,13 +86,13 @@ else{
     </div>
     <!-- panel-heading -->
 
-	<div id="collapseOne" class="panel-collapse collapse in">
+	<div id="collapseOne" class="">
 
 		<!-- panel-body  -->
 	    <div class="panel-body">
 	    <form name="payment" method="post">
-	    <input type="radio" name="paymethod" value="COD" checked="checked"> Contraentrega
-	     <input type="radio" name="paymethod" value="Internet Banking"> Banca Internet
+	    <input type="radio" name="paymethod" value="COD" checked="checked"> Contraentrega <br /><br />
+	     <input type="radio" name="paymethod" value="Internet Banking"> PSE <br /><br />
 	     <input type="radio" name="paymethod" value="Debit / Credit card"> Tarjeta de Crédito/Debito<br /><br />
 	     <input type="submit" value="CONTINUAR" name="submit" class="btn btn-primary">
 	    	
@@ -105,15 +105,7 @@ else{
 </div>
 <!-- checkout-step-01  -->
 
-        <form name="payment" method="post">
-
-	     <input type="radio" name="paymethod" value="COD" checked="checked"> Contraentrega
-	     <input type="radio" name="paymethod" value="Internet Banking"> Banca Internet
-	     <input type="radio" name="paymethod" value="Debit / Credit card"> Tarjeta de Crédito/Debito<br /><br />
-	     <input type="submit" value="CONTINUAR" name="submit" class="btn btn-primary btn-large ">
-	    	
-
-	    </form>
+        
 					  
 					  	
 					</div><!-- /.checkout-steps -->
