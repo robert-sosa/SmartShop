@@ -70,7 +70,7 @@ exit();
 	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
 	    <meta name="robots" content="all">
 
-	    <title>Tienda Virtual Platea21 | Signi-in | Signup</title>
+	    <title>Ingresar / Registrarse</title>
 
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -104,7 +104,25 @@ exit();
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 		
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="img/ico.png">
+		<link rel="shortcut icon" href="assetsFront\images\favicon.png">
+		
+		<!-- FRONTEND -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Customizable CSS -->
+        <link rel="stylesheet" href="assetsFront/css/styles.css">
+        <link rel="stylesheet" href="assetsFront/css/colors/orange.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.carousel.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.transitions.css">
+        <link rel="stylesheet" href="assetsFront/css/animate.min.css">
+
+        <!-- Fonts -->
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Icons/Glyphs -->
+        <link rel="stylesheet" href="assetsFront/css/font-awesome.min.css">
+
 <script type="text/javascript">
 function valid()
 {
@@ -141,28 +159,12 @@ error:function (){}
 		
 	
 		<!-- ============================================== HEADER ============================================== -->
-<header class="header-style-1">
-
-	<!-- ============================================== TOP MENU ============================================== -->
-<!-- ============================================== TOP MENU : END ============================================== -->
-<?php include('includes/main-header.php');?>
-	<!-- ============================================== NAVBAR ============================================== -->
+<header>
 <?php include('includes/menu-bar.php');?>
-<!-- ============================================== NAVBAR : END ============================================== -->
-
 </header>
 
 <!-- ============================================== HEADER : END ============================================== -->
-<div class="breadcrumb">
-	<div class="container">
-		<div class="breadcrumb-inner">
-			<ul class="list-inline list-unstyled">
-				<li><a href="home.html">Inicio</a></li>
-				<li class='active'>Authentication</li>
-			</ul>
-		</div><!-- /.breadcrumb-inner -->
-	</div><!-- /.container -->
-</div><!-- /.breadcrumb -->
+
 
 <div class="body-content outer-top-bd">
 	<div class="container">
@@ -171,7 +173,7 @@ error:function (){}
 				<!-- Sign-in -->			
 <div class="col-md-6 col-sm-6 sign-in">
 	<h4 class="">Iniciar Sesión</h4>
-	<p class="">Hola, bienvenido de vuelta!</p>
+	<p class="">Hola, Bienvenido a la cuenta</p>
 	<form class="register-form outer-top-xs" method="post">
 	<span style="color:red;" >
 <?php
@@ -190,9 +192,12 @@ echo htmlentities($_SESSION['errmsg']="");
 		 <input type="password" name="password" class="form-control unicase-form-control text-input" id="exampleInputPassword1" >
 		</div>
 		<div class="radio outer-xs">
+		    <span class="pull-left">
+                <label class="content-color"><input type="checkbox" class="le-checbox auto-width inline"> <span class="bold">Recodarme</span></label>
+             </span> 
 		  	<a href="forgot-password.php" class="forgot-password pull-right">¿Olvidaste tu contraseña?</a>
 		</div>
-	  	<button type="submit" class="btn-lg btn-upper btn btn-primary checkout-page-button" name="login">Iniciar Sesión</button>
+	  	<button type="submit" class="btn-lg btn-upper le-button huge checkout-page-button" name="login">Iniciar Sesión</button>
 	</form>					
 </div>
 <!-- Sign-in -->
@@ -230,20 +235,17 @@ echo htmlentities($_SESSION['errmsg']="");
 	  	</div>
 
 
-	  	<button type="submit" name="submit" class="btn-lg btn-upper btn btn-primary checkout-page-button" id="submit">Registrarse</button>
+	  	<button type="submit" name="submit" class="btn-lg btn-upper le-button huge checkout-page-button" id="submit">Registrarse</button>
 	</form>
-	<span class="checkout-subtitle outer-top-xs">Registrate ahora y obten nuestros beneficios :  </span>
-	<div class="checkbox">
-	  	<label class="checkbox">
-		  	Rapidez y seguridad en tu forma de pagos.
-		</label>
-		<label class="checkbox">
-		Seguimiento de pedidos.
-		</label>
-		<label class="checkbox">
-			Revisa tu Historial de pedidos.
-		</label>
-	</div>
+	
+	<h2 class="semi-bold">REGISTRATE AHORA Y OBTEN NUESTROS BENEFICIOS :                                </h2>
+
+    <ul class="list-unstyled list-benefits">
+        <li><i class="fa fa-check primary-color"></i> Rapidez y seguridad en tu forma de pagos.</li>
+        <li><i class="fa fa-check primary-color"></i> Seguimiento de pedidos.</li>
+        <li><i class="fa fa-check primary-color"></i> Revisa tu Historial de pedidos.</li>
+    </ul>
+	
 </div>	
 <!-- create a new account -->			</div><!-- /.row -->
 		</div>

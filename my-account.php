@@ -77,7 +77,25 @@ else
 		<link href="assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
-		<link rel="shortcut icon" href="img/ico.png">
+		<link rel="shortcut icon" href="assetsFront\images\favicon.png">
+		
+		<!-- FRONTEND -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Customizable CSS -->
+        <link rel="stylesheet" href="assetsFront/css/styles.css">
+        <link rel="stylesheet" href="assetsFront/css/colors/orange.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.carousel.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.transitions.css">
+        <link rel="stylesheet" href="assetsFront/css/animate.min.css">
+
+        <!-- Fonts -->
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Icons/Glyphs -->
+        <link rel="stylesheet" href="assetsFront/css/font-awesome.min.css">
+
 <script type="text/javascript">
 function valid()
 {
@@ -111,26 +129,11 @@ return true;
 
 	</head>
     <body class="cnt-home">
-<header class="header-style-1">
-
-<!-- ============================================== TOP MENU : END ============================================== -->
-<?php include('includes/main-header.php');?>
-	<!-- ============================================== NAVBAR ============================================== -->
+<header class=>
 <?php include('includes/menu-bar.php');?>
-<!-- ============================================== NAVBAR : END ============================================== -->
-
 </header>
 <!-- ============================================== HEADER : END ============================================== -->
-<div class="breadcrumb">
-	<div class="container">
-		<div class="breadcrumb-inner">
-			<ul class="list-inline list-unstyled">
-				<li><a href="#">Inicio</a></li>
-				<li class='active'>Checkout</li>
-			</ul>
-		</div><!-- /.breadcrumb-inner -->
-	</div><!-- /.container -->
-</div><!-- /.breadcrumb -->
+
 
 <div class="body-content outer-top-bd">
 	<div class="container">
@@ -144,7 +147,7 @@ return true;
 	<!-- panel-heading -->
 		<div class="panel-heading">
     	<h4 class="unicase-checkout-title">
-	        <a data-toggle="collapse" class="" data-parent="#accordion" href="#collapseOne">
+	        <a data-toggle="collapse" class="" data-parent="#accordion" >
 	          <span>1</span>Mi Perfil
 	        </a>
 	     </h4>
@@ -181,7 +184,7 @@ while($row=mysqli_fetch_array($query))
 					    <label class="info-title" for="Contact No.">Teléfono/Celular. <span>*</span></label>
 					    <input type="text" class="form-control unicase-form-control text-input" id="contactno" name="contactno" required="required" value="<?php echo $row['contactno'];?>"  maxlength="10">
 					  </div>
-					  <button type="submit" name="update" class="btn-upper btn btn-primary checkout-page-button">Actualizar</button>
+					  <button type="submit" name="update" class="btn-upper le-button huge checkout-page-button">Actualizar</button>
 					</form>
 					<?php } ?>
 				</div>	
@@ -198,7 +201,7 @@ while($row=mysqli_fetch_array($query))
 					  	<div class="panel panel-default checkout-step-02">
 						    <div class="panel-heading">
 						      <h4 class="unicase-checkout-title">
-						        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" href="#collapseTwo">
+						        <a data-toggle="collapse" class="collapsed" data-parent="#accordion" >
 						          <span>2</span>Cambiar contraseña
 						        </a>
 						      </h4>
@@ -222,7 +225,7 @@ while($row=mysqli_fetch_array($query))
 					    <label class="info-title" for="Confirm Password">Confirmar contraseña <span>*</span></label>
 					    <input type="password" class="form-control unicase-form-control text-input" id="cnfpass" name="cnfpass" required="required" >
 					  </div>
-					  <button type="submit" name="submit" class="btn-upper btn btn-primary checkout-page-button">Actualizar </button>
+					  <button type="submit" name="submit" class="btn-upper le-button huge checkout-page-button">Actualizar </button>
 					</form> 
 
 

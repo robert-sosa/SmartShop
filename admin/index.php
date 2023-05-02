@@ -41,52 +41,47 @@ exit();
 	<link type="text/css" href="css/theme.css" rel="stylesheet">
 	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
 	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../assetsFront\images\favicon.png">
+		
+	<!-- FRONTEND -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Customizable CSS -->
+    <link rel="stylesheet" href="../assetsFront/css/styles.css">
+    <link rel="stylesheet" href="../assetsFront/css/colors/orange.css">
+    <link rel="stylesheet" href="../assetsFront/css/owl.carousel.css">
+    <link rel="stylesheet" href="../assetsFront/css/owl.transitions.css">
+    <link rel="stylesheet" href="../assetsFront/css/animate.min.css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Icons/Glyphs -->
+    <link rel="stylesheet" href="../assetsFront/css/font-awesome.min.css">
 </head>
 
+<header>
+	<?php include('../admin\include\header.php');?>
+<header>
+
 <body>
-
-	<div class="navbar navbar-fixed-top">
-		<div class="navbar-inner">
-			<div class="container">
-				<a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-inverse-collapse">
-					<i class="icon-reorder shaded"></i>
-				</a>
-
-			  	<a class="brand" href="index.html">
-				    <img src="../admin/images/logo.png" style="height:50px;" alt="logo.png" />
-			  		| Ingresa Administrador
-			  	</a>
-
-				<div class="nav-collapse collapse navbar-inverse-collapse">
-				
-					<ul class="nav pull-right">
-
-						<li><a href="../">
-						Volver al Portal
-						
-						</a></li>
-
-						
-
-						
-					</ul>
-				</div><!-- /.nav-collapse -->
-			</div>
-		</div><!-- /navbar-inner -->
-	</div><!-- /navbar -->
+	
 
 
 
-	<div class="wrapper">
-		<div class="container">
+	<div class="">
+		<div class="container" style="width:20%">
 			<div class="row">
-				<div class="module module-login span4 offset4">
+				<div class="">
 					<form class="form-vertical" method="post">
-						<div class="module-head">
-							<h3>Iniciar Sesión</h3>
+						<div >
+							<h1>Iniciar Sesión</h1>
 						</div>
+						<br>
 						<span style="color:red;" ><?php echo htmlentities($_SESSION['errmsg']); ?><?php echo htmlentities($_SESSION['errmsg']="");?></span>
-						<div class="module-body">
+						<div class="">
 							<div class="control-group">
 								<div class="controls row-fluid">
 									<input class="span12" type="text" id="inputEmail" name="username" placeholder="Usuario">
@@ -98,10 +93,11 @@ exit();
 								</div>
 							</div>
 						</div>
-						<div class="module-foot">
+						<br>
+						<div>
 							<div class="control-group">
 								<div class="controls clearfix">
-									<button type="submit" class="btn btn-primary pull-right" name="submit">Ingresar</button>
+									<button type="submit" class="le-button huge" name="submit">Ingresar</button>
 									
 								</div>
 							</div>
@@ -112,11 +108,17 @@ exit();
 		</div>
 	</div><!--/.wrapper-->
 
-	<div class="footer">
-		<div class="container">
-		<span class="mb-3 mb-md-0 text-muted">&copy; Desarrollo en equipos TSP - Politecnico Grancolombiano 2022</span>	 
-		</div>
-	</div>
+	
+
+
+
+
+	<footer>
+	    <?php include('../admin\include\footer.php');?>
+    </footer>
+
+
+	
 	<script src="scripts/jquery-1.9.1.min.js" type="text/javascript"></script>
 	<script src="scripts/jquery-ui-1.10.1.custom.min.js" type="text/javascript"></script>
 	<script src="bootstrap/js/bootstrap.min.js" type="text/javascript"></script>

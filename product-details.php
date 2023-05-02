@@ -55,7 +55,7 @@ if(isset($_POST['submit']))
 		<meta name="author" content="">
 	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
 	    <meta name="robots" content="all">
-	    <title>Product Details</title>
+	    <title>Producto</title>
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	    <link rel="stylesheet" href="assets/css/main.css">
 	    <link rel="stylesheet" href="assets/css/green.css">
@@ -76,20 +76,30 @@ if(isset($_POST['submit']))
 
         <!-- Fonts --> 
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
-		<link rel="shortcut icon" href="assets/images/close.png">
+		<link rel="shortcut icon" href="assetsFront\images\favicon.png">
+
+		<!-- FRONTEND -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Customizable CSS -->
+        <link rel="stylesheet" href="assetsFront/css/styles.css">
+        <link rel="stylesheet" href="assetsFront/css/colors/orange.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.carousel.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.transitions.css">
+        <link rel="stylesheet" href="assetsFront/css/animate.min.css">
+
+        <!-- Fonts -->
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Icons/Glyphs -->
+        <link rel="stylesheet" href="assetsFront/css/font-awesome.min.css">
+
 	</head>
     <body class="cnt-home">
 	
-<header class="header-style-1">
-
-	<!-- ============================================== TOP MENU ============================================== -->
-
-<!-- ============================================== TOP MENU : END ============================================== -->
-<?php include('includes/main-header.php');?>
-	<!-- ============================================== NAVBAR ============================================== -->
+<header>
 <?php include('includes/menu-bar.php');?>
-<!-- ============================================== NAVBAR : END ============================================== -->
-
 </header>
 
 <!-- ============================================== HEADER : END ============================================== -->
@@ -101,27 +111,26 @@ if(isset($_POST['submit']))
 		<div class='row single-product outer-bottom-sm '>
 			<div class='col-md-3 sidebar'>
 				<div class="sidebar-module-container">
+				<div id="top-banner-and-menu">  
+    <div class="container row outer-bottom-sm ">
+        <div class="col-xs-12 col-sm-4 col-md-3 sidemenu-holder">
+            <!-- ================================== TOP NAVIGATION ================================== -->
+            <?php include('includes/side-menu.php');?>
+            <!-- ================================== TOP NAVIGATION : END ================================== -->
+        </div><!-- /.sidemenu-holder -->
+    </div><!-- /.container -->
+</div><!-- /#top-banner-and-menu -->
 
 
 					<!-- ==============================================CATEGORY============================================== -->
 <div class="sidebar-widget outer-bottom-xs wow fadeInUp">
-	<h3 class="section-title">Categoria</h3>
 	<div class="sidebar-widget-body m-t-10">
 		<div class="accordion">
-
-		            <?php $sql=mysqli_query($con,"select id,categoryName  from category");
-while($row=mysqli_fetch_array($sql))
-{
-    ?>
+		            
 	    	<div class="accordion-group">
-	            <div class="accordion-heading">
-	                <a href="category.php?cid=<?php echo $row['id'];?>"  class="accordion-toggle collapsed">
-	                   <?php echo $row['categoryName'];?>
-	                </a>
-	            </div>
-	          
+
 	        </div>
-	        <?php } ?>
+	        
 	    </div>
 	</div>
 </div>
@@ -212,7 +221,7 @@ while($row=mysqli_fetch_array($ret))
 
 					<div class='col-sm-6 col-md-7 product-info-block'>
 						<div class="product-info">
-							<h1 class="name"><?php echo htmlentities($row['productName']);?></h1>
+						    <h1><?php echo htmlentities($row['productName']);?></h1>
 <?php $rt=mysqli_query($con,"select * from productreviews where productId='$pid'");
 $num=mysqli_num_rows($rt);
 {
@@ -224,7 +233,7 @@ $num=mysqli_num_rows($rt);
 									</div>
 									<div class="col-sm-8">
 										<div class="reviews">
-											<a href="#" class="lnk">(<?php echo htmlentities($num);?> Calificaciones)</a>
+											<a href="#" class="lnk"></a>
 										</div>
 									</div>
 								</div><!-- /.row -->		
@@ -234,12 +243,12 @@ $num=mysqli_num_rows($rt);
 								<div class="row">
 									<div class="col-sm-3">
 										<div class="stock-box">
-											<span class="label">DISPONIBLE :</span>
+											<p><b>Disponible :</b></p>
 										</div>	
 									</div>
 									<div class="col-sm-9">
 										<div class="stock-box">
-											<span class="value"><?php echo htmlentities($row['productAvailability']);?></span>
+											<p><?php echo htmlentities($row['productAvailability']);?></p>
 										</div>	
 									</div>
 								</div><!-- /.row -->	
@@ -251,12 +260,12 @@ $num=mysqli_num_rows($rt);
 								<div class="row">
 									<div class="col-sm-3">
 										<div class="stock-box">
-											<span class="label">Marca :</span>
+											<p> <b> Marca : </b></p>
 										</div>	
 									</div>
 									<div class="col-sm-9">
 										<div class="stock-box">
-											<span class="value"><?php echo htmlentities($row['productCompany']);?></span>
+											<p><?php echo htmlentities($row['productCompany']);?></p>
 										</div>	
 									</div>
 								</div><!-- /.row -->	
@@ -267,12 +276,12 @@ $num=mysqli_num_rows($rt);
 								<div class="row">
 									<div class="col-sm-3">
 										<div class="stock-box">
-											<span class="label">Costo de envío:</span>
+											<p><b>Costo de envío:</b></p>
 										</div>	
 									</div>
 									<div class="col-sm-9">
 										<div class="stock-box">
-											<span class="value"><?php if($row['shippingCharge']==0)
+											<p><?php if($row['shippingCharge']==0)
 											{
 												echo "Gratis";
 											}
@@ -281,7 +290,7 @@ $num=mysqli_num_rows($rt);
 												echo htmlentities($row['shippingCharge']);
 											}
 
-											?></span>
+											?></p>
 										</div>	
 									</div>
 								</div><!-- /.row -->	
@@ -331,7 +340,7 @@ $num=mysqli_num_rows($rt);
 									</div>
 
 									<div class="col-sm-7 h2">
-										<a href="product-details.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="btn btn-primary btn-lg"><i class="fa fa-shopping-cart inner-right-vs"></i> Agregar a compras</a>
+										<a id="addto-cart" href="product-details.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="le-button huge"><i class="fa fa-shopping-cart inner-right-vs"></i> Agregar al carrito</a>
 									</div>
 
 									
@@ -526,10 +535,11 @@ while($rw=mysqli_fetch_array($qry))
 				<div class="action">
 					<ul class="list-unstyled">
 						<li class="add-cart-button btn-group">
-							<button class="btn btn-primary icon" data-toggle="dropdown" type="button">
-								<i class="fa fa-shopping-cart"></i>													
+							<button class="le-button icon" data-toggle="dropdown" type="button">
+								<i class="fa fa-shopping-cart"></i>		
+								<a href="product-details.php?page=product&action=add&id=<?php echo $rw['id']; ?>" class="text-white">Agregar a carrito</a>
+											
 							</button>
-						<a href="product-details.php?page=product&action=add&id=<?php echo $rw['id']; ?>" class="lnk btn btn-primary btn-lg">Agregar a carrito</a>
 													
 						</li>
 	                   
@@ -553,7 +563,6 @@ while($rw=mysqli_fetch_array($qry))
 			</div><!-- /.col -->
 			<div class="clearfix"></div>
 		</div>
-<?php include('includes/brands-slider.php');?>
 </div>
 </div>
 <?php include('includes/footer.php');?>
@@ -574,9 +583,10 @@ while($rw=mysqli_fetch_array($qry))
     <script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/scripts.js"></script>
 
+
+
 	<!-- For demo purposes – can be removed on production -->
 	
-	<script src="switchstylesheet/switchstylesheet.js"></script>
 	
 	<script>
 		$(document).ready(function(){ 

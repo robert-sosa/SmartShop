@@ -22,7 +22,7 @@ else{
 	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
 	    <meta name="robots" content="all">
 
-	    <title>Order History</title>
+	    <title>Historial de compras</title>
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
 	    <link rel="stylesheet" href="assets/css/main.css">
 	    <link rel="stylesheet" href="assets/css/green.css">
@@ -44,7 +44,24 @@ else{
 		<link href="assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
 		<link rel="stylesheet" href="assets/css/font-awesome.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
-		<link rel="shortcut icon" href="img/ico.png">
+		<link rel="shortcut icon" href="assetsFront\images\favicon.png">
+		
+		<!-- FRONTEND -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Customizable CSS -->
+        <link rel="stylesheet" href="assetsFront/css/styles.css">
+        <link rel="stylesheet" href="assetsFront/css/colors/orange.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.carousel.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.transitions.css">
+        <link rel="stylesheet" href="assetsFront/css/animate.min.css">
+
+        <!-- Fonts -->
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Icons/Glyphs -->
+        <link rel="stylesheet" href="assetsFront/css/font-awesome.min.css">
 	<script language="javascript" type="text/javascript">
 var popUpWin=0;
 function popUpWindow(URLStr, left, top, width, height)
@@ -64,22 +81,11 @@ popUpWin = open(URLStr,'popUpWin', 'toolbar=no,location=no,directories=no,status
 		
 	
 		<!-- ============================================== HEADER ============================================== -->
-<header class="header-style-1">
-
-<?php include('includes/main-header.php');?>
+<header>
 <?php include('includes/menu-bar.php');?>
 </header>
 <!-- ============================================== HEADER : END ============================================== -->
-<div class="breadcrumb">
-	<div class="container">
-		<div class="breadcrumb-inner">
-			<ul class="list-inline list-unstyled">
-				<li><a href="#">Inicio</a></li>
-				<li class='active'>Shopping Cart</li>
-			</ul>
-		</div><!-- /.breadcrumb-inner -->
-	</div><!-- /.container -->
-</div><!-- /.breadcrumb -->
+<
 
 <div class="body-content outer-top-xs">
 	<div class="container">
@@ -117,7 +123,7 @@ while($row=mysqli_fetch_array($query))
 					<td><?php echo $cnt;?></td>
 					<td class="cart-image">
 						<a class="entry-thumbnail" href="detail.html">
-						    <img src="admin/productimages/<?php echo $row['proid'];?>/<?php echo $row['pimg1'];?>" alt="" width="84" height="146">
+						    <img src="admin/productimages/<?php echo $row['proid'];?>/<?php echo $row['pimg1'];?>" alt="" width="220">
 						</a>
 					</td>
 					<td class="cart-product-name-info">

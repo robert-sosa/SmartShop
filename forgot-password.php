@@ -47,7 +47,7 @@ exit();
 	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
 	    <meta name="robots" content="all">
 
-	    <title>Tienda Virtual Platea21 | Recuperar contraseña</title>
+	    <title>Recuperar contraseña</title>
 
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -81,7 +81,24 @@ exit();
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 		
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="img/ico.png">
+		<link rel="shortcut icon" href="assetsFront\images\favicon.png">
+		
+		<!-- FRONTEND -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Customizable CSS -->
+        <link rel="stylesheet" href="assetsFront/css/styles.css">
+        <link rel="stylesheet" href="assetsFront/css/colors/orange.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.carousel.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.transitions.css">
+        <link rel="stylesheet" href="assetsFront/css/animate.min.css">
+
+        <!-- Fonts -->
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Icons/Glyphs -->
+        <link rel="stylesheet" href="assetsFront/css/font-awesome.min.css">
 <script type="text/javascript">
 function valid()
 {
@@ -100,29 +117,12 @@ return true;
 		
 	
 		<!-- ============================================== HEADER ============================================== -->
-<header class="header-style-1">
-
-	<!-- ============================================== TOP MENU ============================================== -->
-
-<!-- ============================================== TOP MENU : END ============================================== -->
-<?php include('includes/main-header.php');?>
-	<!-- ============================================== NAVBAR ============================================== -->
+<header>
 <?php include('includes/menu-bar.php');?>
-<!-- ============================================== NAVBAR : END ============================================== -->
-
 </header>
 
 <!-- ============================================== HEADER : END ============================================== -->
-<div class="breadcrumb">
-	<div class="container">
-		<div class="breadcrumb-inner">
-			<ul class="list-inline list-unstyled">
-				<li><a href="home.html">Inicio</a></li>
-				<li class='active'>Recuperar contraseña</li>
-			</ul>
-		</div><!-- /.breadcrumb-inner -->
-	</div><!-- /.container -->
-</div><!-- /.breadcrumb -->
+
 
 <div class="body-content outer-top-bd">
 	<div class="container">
@@ -160,7 +160,7 @@ echo htmlentities($_SESSION['errmsg']="");
 
 
 		
-	  	<button type="submit" class="btn-upper btn btn-primary checkout-page-button" name="change">Recuperar contraseña</button>
+	  	<button type="submit" class="btn-upper le-button huge checkout-page-button" name="change">Recuperar contraseña</button>
 	</form>					
 </div>
 <!-- Sign-in -->

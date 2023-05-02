@@ -12,7 +12,7 @@ if(isset($_POST['submit'])){
 
 			}
 		}
-			echo "<script>alert('Your Cart hasbeen Updated');</script>";
+			echo "<script>alert('Tu carrito fue actualizado');</script>";
 		}
 	}
 // Code for Remove a Product from Cart
@@ -24,7 +24,7 @@ if(!empty($_SESSION['cart'])){
 			
 				unset($_SESSION['cart'][$key]);
 		}
-			echo "<script>alert('Your Cart has been Updated');</script>";
+			echo "<script>alert('Tu carrito fue actualizado');</script>";
 	}
 }
 // code for insert product in order table
@@ -99,7 +99,25 @@ header('location:payment-method.php');
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 		
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="img/ico.png">
+		<link rel="shortcut icon" href="assetsFront\images\favicon.png">
+		
+		<!-- FRONTEND -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Customizable CSS -->
+        <link rel="stylesheet" href="assetsFront/css/styles.css">
+        <link rel="stylesheet" href="assetsFront/css/colors/orange.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.carousel.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.transitions.css">
+        <link rel="stylesheet" href="assetsFront/css/animate.min.css">
+
+        <!-- Fonts -->
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Icons/Glyphs -->
+        <link rel="stylesheet" href="assetsFront/css/font-awesome.min.css">
+
 
 		<!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
 		<!--[if lt IE 9]>
@@ -113,22 +131,11 @@ header('location:payment-method.php');
 		
 	
 		<!-- ============================================== HEADER ============================================== -->
-<header class="header-style-1">
-
-<?php include('includes/main-header.php');?>
+<header>
 <?php include('includes/menu-bar.php');?>
 </header>
 <!-- ============================================== HEADER : END ============================================== -->
-<div class="breadcrumb">
-	<div class="container">
-		<div class="breadcrumb-inner">
-			<ul class="list-inline list-unstyled">
-				<li><a href="#">Inicio</a></li>
-				<li class='active'>Carrito de compras</li>
-			</ul>
-		</div><!-- /.breadcrumb-inner -->
-	</div><!-- /.container -->
-</div><!-- /.breadcrumb -->
+
 
 <div class="body-content outer-top-xs">
 	<div class="container">
@@ -143,14 +150,14 @@ if(!empty($_SESSION['cart'])){
 		<table class="table table-bordered">
 			<thead>
 				<tr>
-					<th class="cart-romove item">Eliminar</th>
-					<th class="cart-description item">Imagen</th>
-					<th class="cart-product-name item">Nombre de producto</th>
+					<th class="cart-romove item"><h3>Eliminar</h3></th>
+					<th class="cart-description item"><h3>Imagen</h3></th>
+					<th class="cart-product-name item"><h3>Nombre de producto</h3></th>
 			
-					<th class="cart-qty item">Cantidad</th>
-					<th class="cart-sub-total item">Precio unitario</th>
-					<th class="cart-sub-total item">Costo de envío</th>
-					<th class="cart-total last-item">Total</th>
+					<th class="cart-qty item"><h3>Cantidad</h3></th>
+					<th class="cart-sub-total item"><h3>Precio unitario</h3></th>
+					<th class="cart-sub-total item"><h3>Costo de envío</h3></th>
+					<th class="cart-total last-item"><h3>Total</h3></th>
 				</tr>
 			</thead><!-- /thead -->
 			<tfoot>
@@ -158,8 +165,8 @@ if(!empty($_SESSION['cart'])){
 					<td colspan="7">
 						<div class="shopping-cart-btn">
 							<span class="">
-								<a href="index.php" class="btn btn-upper btn-primary outer-left-xs">Continuar comprando</a>
-								<input type="submit" name="submit" value="Actualizar carrito de compras" class="btn btn-upper btn-primary pull-right outer-right-xs">
+								<a href="index.php" class="le-button huge">Continuar comprando</a>
+								<input type="submit" name="submit" value="Actualizar carrito de compras" class="le-button huge pull-right outer-right-xs">
 							</span>
 						</div><!-- /.shopping-cart-btn -->
 					</td>
@@ -190,30 +197,16 @@ if(!empty($_SESSION['cart'])){
 				<tr>
 					<td class="romove-item"><input type="checkbox" name="remove_code[]" value="<?php echo htmlentities($row['id']);?>" /></td>
 					<td class="cart-image">
-						<a class="entry-thumbnail" href="detail.html">
-						    <img src="admin/productimages/<?php echo $row['id'];?>/<?php echo $row['productImage1'];?>" alt="" width="114" height="146">
+						<a class="entry-thumbnail" href="product-details.php?pid=<?php echo htmlentities($pd=$row['id']);?>">
+						    <img src="admin/productimages/<?php echo $row['id'];?>/<?php echo $row['productImage1'];?>" alt="" width="150">
 						</a>
 					</td>
 					<td class="cart-product-name-info">
-						<h4 class='cart-product-description'><a href="product-details.php?pid=<?php echo htmlentities($pd=$row['id']);?>" ><?php echo $row['productName'];
+						<h3><a class="link-dark" href="product-details.php?pid=<?php echo htmlentities($pd=$row['id']);?>" ><?php echo $row['productName'];
 
 $_SESSION['sid']=$pd;
-						 ?></a></h4>
-						<div class="row">
-							<div class="col-sm-4">
-								<div class="rating rateit-small"></div>
-							</div>
-							<div class="col-sm-8">
-<?php $rt=mysqli_query($con,"select * from productreviews where productId='$pd'");
-$num=mysqli_num_rows($rt);
-{
-?>
-								<div class="reviews">
-									( <?php echo htmlentities($num);?> Calificaciones )
-								</div>
-								<?php } ?>
-							</div>
-						</div><!-- /.row -->
+						 ?></a></h3>
+						
 						
 					</td>
 					<td class="cart-product-quantity">
@@ -226,10 +219,10 @@ $num=mysqli_num_rows($rt);
 				             
 			              </div>
 		            </td>
-					<td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "$"." ".$row['productPrice']; ?>.00</span></td>
-<td class="cart-product-sub-total"><span class="cart-sub-total-price"><?php echo "$"." ".$row['shippingCharge']; ?>.00</span></td>
+					<td class="cart-product-sub-total"><h3 ><?php echo "$".$row['productPrice']; ?></h3></td>
+<td class="cart-product-sub-total"><h3><?php echo "$".$row['shippingCharge']; ?></h3></td>
 
-					<td class="cart-product-grand-total"><span class="cart-grand-total-price"><?php echo ($_SESSION['cart'][$row['id']]['quantity']*$row['productPrice']+$row['shippingCharge']); ?>.00</span></td>
+					<td class="cart-product-grand-total"><h3>$<?php echo ($_SESSION['cart'][$row['id']]['quantity']*$row['productPrice']+$row['shippingCharge']); ?></h3></td>
 				</tr>
 
 				<?php } }
@@ -245,7 +238,7 @@ $_SESSION['pid']=$pdtid;
 		<thead>
 			<tr>
 				<th>
-					<span class="estimate-title">Dirección de envío</span>
+					<h2>Dirección de envío</h2>
 				</th>
 			</tr>
 		</thead>
@@ -276,7 +269,7 @@ while ($rt=mysqli_fetch_array($qry)) {
 		<thead>
 			<tr>
 				<th>
-					<span class="estimate-title">Dirección de Facturación</span>
+					<h2>Dirección de Facturación</h2>
 				</th>
 			</tr>
 		</thead>
@@ -307,9 +300,9 @@ while ($rt=mysqli_fetch_array($qry)) {
 			<tr>
 				<th>
 					
-					<div class="cart-grand-total">
-						Monto Total<span class="inner-left-md"><?php echo $_SESSION['tp']="$totalprice". ".00"; ?></span>
-					</div>
+					<h1>
+						Monto Total: $<span class="inner-left-md"><?php echo $_SESSION['tp']="$totalprice"; ?></span>
+					</h1>
 				</th>
 			</tr>
 		</thead><!-- /thead -->
@@ -317,9 +310,10 @@ while ($rt=mysqli_fetch_array($qry)) {
 				<tr>
 					<td>
 						<div class="cart-checkout-btn pull-right">
-							<button type="submit" name="ordersubmit" class="btn btn-primary">REALIZAR PAGO</button>
+							<button type="submit" name="ordersubmit" class="le-button huge">REALIZAR PAGO</button>
 						
 						</div>
+						
 					</td>
 				</tr>
 		</tbody><!-- /tbody -->
@@ -349,6 +343,8 @@ echo "Tu carrito de compras esta vacío";
     <script src="assets/js/bootstrap-select.min.js"></script>
     <script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/scripts.js"></script>
+
+	
 
 	<!-- For demo purposes – can be removed on production -->
 	

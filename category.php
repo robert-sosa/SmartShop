@@ -46,7 +46,7 @@ header('location:my-wishlist.php');
 	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
 	    <meta name="robots" content="all">
 
-	    <title>Product Category</title>
+	    <title>Categoria</title>
 
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -62,15 +62,6 @@ header('location:my-wishlist.php');
 		<link rel="stylesheet" href="assets/css/rateit.css">
 		<link rel="stylesheet" href="assets/css/bootstrap-select.min.css">
 
-		<!-- Demo Purpose Only. Should be removed in production -->
-		<link rel="stylesheet" href="assets/css/config.css">
-
-		<link href="assets/css/green.css" rel="alternate stylesheet" title="Green color">
-		<link href="assets/css/blue.css" rel="alternate stylesheet" title="Blue color">
-		<link href="assets/css/red.css" rel="alternate stylesheet" title="Red color">
-		<link href="assets/css/orange.css" rel="alternate stylesheet" title="Orange color">
-		<link href="assets/css/dark-green.css" rel="alternate stylesheet" title="Darkgreen color">
-		<!-- Demo Purpose Only. Should be removed in production : END -->
 
 		
 		<!-- Icons/Glyphs -->
@@ -80,7 +71,24 @@ header('location:my-wishlist.php');
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 		
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="assets/images/close.png">
+		<link rel="shortcut icon" href="assetsFront\images\favicon.png">
+
+		<!-- FRONTEND -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Customizable CSS -->
+        <link rel="stylesheet" href="assetsFront/css/styles.css">
+        <link rel="stylesheet" href="assetsFront/css/colors/orange.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.carousel.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.transitions.css">
+        <link rel="stylesheet" href="assetsFront/css/animate.min.css">
+
+        <!-- Fonts -->
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Icons/Glyphs -->
+        <link rel="stylesheet" href="assetsFront/css/font-awesome.min.css">
 
 		<!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
 		<!--[if lt IE 9]>
@@ -91,11 +99,7 @@ header('location:my-wishlist.php');
 	</head>
     <body class="cnt-home">
 	
-<header class="header-style-1">
-
-	<!-- ============================================== TOP MENU ============================================== -->
-<!-- ============================================== TOP MENU : END ============================================== -->
-<?php include('includes/main-header.php');?>
+<header>
 	<!-- ============================================== NAVBAR ============================================== -->
 <?php include('includes/menu-bar.php');?>
 <!-- ============================================== NAVBAR : END ============================================== -->
@@ -106,12 +110,12 @@ header('location:my-wishlist.php');
 <div class="body-content outer-top-xs">
 	<div class='container'>
 		<div class='row outer-bottom-sm'>
-			<div class='col-md-3 sidebar'>
+			<div class='col-xs-12 col-sm-4 col-md-3 sidemenu-holder'>
 	            <!-- ================================== TOP NAVIGATION ================================== -->
 
 <div class="side-menu animate-dropdown outer-bottom-xs">       
 <div class="side-menu animate-dropdown outer-bottom-xs">
-    <div class="head text-bg-primary"><i class="icon fa fa-align-justify fa-fw"></i>Sub Categoria</div>        
+    <div class="head"><i class="icon fa fa-align-justify fa-fw"></i>Sub Categoria</div>        
     <nav class="yamm megamenu-horizontal" role="navigation">
   
         <ul class="nav">
@@ -129,32 +133,38 @@ while($row=mysqli_fetch_array($sql))
 </ul>
     </nav>
 </div>
+
 </div><!-- /.side-menu -->
+
+<div class="widget">
+    <div class="simple-banner">
+        <a href="#"><img alt="" class="img-responsive" src="assetsFront/images/blank.gif" data-echo="assetsFront/images/banners/banner-simple.jpg" /></a>
+    </div>
+</div>
+<br>
+
+<h1>comprar por</h1>
+<br>
+<?php include('includes/side-menu.php');?>
+
 <!-- ================================== TOP NAVIGATION : END ================================== -->	            <div class="sidebar-module-container">
-	            	<h3 class="section-title">comprar por</h3>
+	            
 	            	<div class="sidebar-filter">
 		            	<!-- ============================================== SIDEBAR CATEGORY ============================================== -->
 <div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
 	<div class="widget-header m-t-20">
-		<h4 class="widget-title">Categoria</h4>
+
 	</div>
 	<div class="sidebar-widget-body m-t-10">
 	         <?php $sql=mysqli_query($con,"select id,categoryName  from category");
 while($row=mysqli_fetch_array($sql))
 {
     ?>
-		<div class="accordion">
-	    	<div class="accordion-group">
-	            <div class="accordion-heading">
-	                <a href="category.php?cid=<?php echo $row['id'];?>"  class="accordion-toggle collapsed">
-	                   <?php echo $row['categoryName'];?>
-	                </a>
-	            </div>  
-	        </div>
-	    </div>
+		
 	    <?php } ?>
 	</div><!-- /.sidebar-widget-body -->
 </div><!-- /.sidebar-widget -->
+
 
 
 
@@ -170,7 +180,7 @@ while($row=mysqli_fetch_array($sql))
 	<div id="category" class="category-carousel hidden-xs">
 		<div class="item">	
 			<div class="image">
-				<img src="assets/images/banners/category.jpg" alt="" >
+				<img src="assetsFront/images/banners/category.jpg" alt="" >
 			</div>
 			<div class="container-fluid">
 				<div class="caption vertical-top text-left">
@@ -183,9 +193,9 @@ while($row=mysqli_fetch_array($sql))
 {
     ?>
 
-					<div class="excerpt hidden-sm hidden-md">
+					<h1 class="excerpt text-white">
 						<?php echo htmlentities($row['categoryName']);?>
-					</div>
+					</h1>
 			<?php } ?>
 			
 				</div><!-- /.caption -->
@@ -233,11 +243,9 @@ while ($row=mysqli_fetch_array($ret))
 					<ul class="list-unstyled">
 						<li class="add-cart-button btn-group">
 
-							<button class="btn-primary icon" type="button">
-								<i class="fa fa-shopping-cart inner-right-vs"></i>													
-							</button>
-							<a href="category.php?page=product&action=add&id=<?php echo $row['id']; ?>">
-							<button class="btn btn-primary btn-lg " type="button">Agregar a carrito</button></a>
+							
+							<a id="addto-cart" href="product-details.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="le-button"><i class="fa fa-shopping-cart inner-right-vs"></i> Agregar al carrito</a>
+
 													
 						</li>
 
@@ -281,12 +289,9 @@ while ($row=mysqli_fetch_array($ret))
 </div>
 <?php include('includes/footer.php');?>
 	<script src="assets/js/jquery-1.11.1.min.js"></script>
-	
 	<script src="assets/js/bootstrap.min.js"></script>
-	
 	<script src="assets/js/bootstrap-hover-dropdown.min.js"></script>
 	<script src="assets/js/owl.carousel.min.js"></script>
-	
 	<script src="assets/js/echo.min.js"></script>
 	<script src="assets/js/jquery.easing-1.3.min.js"></script>
 	<script src="assets/js/bootstrap-slider.min.js"></script>
@@ -296,10 +301,28 @@ while ($row=mysqli_fetch_array($ret))
     <script src="assets/js/wow.min.js"></script>
 	<script src="assets/js/scripts.js"></script>
 
+	<!-- JavaScripts FRONTEND -->
+	<script src="assetsFront/js/jquery-1.10.2.min.js"></script>
+    <script src="assetsFront/js/jquery-migrate-1.2.1.js"></script>
+    <script src="assetsFront/js/gmap3.min.js"></script>
+    <script src="assetsFront/js/bootstrap-hover-dropdown.min.js"></script>
+    <script src="assetsFront/js/owl.carousel.min.js"></script>
+    <script src="assetsFront/js/css_browser_selector.min.js"></script>
+    <script src="assetsFront/js/echo.min.js"></script>
+    <script src="assetsFront/js/jquery.easing-1.3.min.js"></script>
+    <script src="assetsFront/js/bootstrap-slider.min.js"></script>
+    <script src="assetsFront/js/jquery.raty.min.js"></script>
+    <script src="assetsFront/js/jquery.prettyPhoto.min.js"></script>
+    <script src="assetsFront/js/jquery.customSelect.min.js"></script>
+    <script src="assetsFront/js/wow.min.js"></script>
+    <script src="assetsFront/js/buttons.js"></script>
+    <script src="assetsFront/js/scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
+
 	<!-- For demo purposes – can be removed on production -->
-	
-	<script src="switchstylesheet/switchstylesheet.js"></script>
-	
+		
 	<script>
 		$(document).ready(function(){ 
 			$(".changecolor").switchstylesheet( { seperator:"color"} );

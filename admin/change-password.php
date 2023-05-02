@@ -37,6 +37,26 @@ $_SESSION['msg']="Old Password not match !!";
 	<link type="text/css" href="css/theme.css" rel="stylesheet">
 	<link type="text/css" href="images/icons/css/font-awesome.css" rel="stylesheet">
 	<link type="text/css" href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600' rel='stylesheet'>
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="../assetsFront\images\favicon.png">
+		
+	<!-- FRONTEND -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Customizable CSS -->
+    <link rel="stylesheet" href="../assetsFront/css/styles.css">
+    <link rel="stylesheet" href="../assetsFront/css/colors/orange.css">
+    <link rel="stylesheet" href="../assetsFront/css/owl.carousel.css">
+    <link rel="stylesheet" href="../assetsFront/css/owl.transitions.css">
+    <link rel="stylesheet" href="../assetsFront/css/animate.min.css">
+
+    <!-- Fonts -->
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+
+    <!-- Icons/Glyphs -->
+    <link rel="stylesheet" href="../assetsFront/css/font-awesome.min.css">
+	
 	<script type="text/javascript">
 function valid()
 {
@@ -71,10 +91,11 @@ return true;
 <body>
 <?php include('include/header.php');?>
 
+<?php include('include/sidebar.php');?>	
+
 	<div class="wrapper">
 		<div class="container">
 			<div class="row">
-<?php include('include/sidebar.php');?>				
 			<div class="span9">
 					<div class="content">
 

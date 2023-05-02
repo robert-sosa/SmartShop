@@ -46,7 +46,7 @@ header('location:my-wishlist.php');
 	    <meta name="keywords" content="MediaCenter, Template, eCommerce">
 	    <meta name="robots" content="all">
 
-	    <title>Product Category</title>
+	    <title>SubCategoria</title>
 
 	    <!-- Bootstrap Core CSS -->
 	    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -80,7 +80,25 @@ header('location:my-wishlist.php');
 		<link href='http://fonts.googleapis.com/css?family=Roboto:300,400,500,700' rel='stylesheet' type='text/css'>
 		
 		<!-- Favicon -->
-		<link rel="shortcut icon" href="img/ico.png">
+		<link rel="shortcut icon" href="assetsFront\images\favicon.png">
+
+		<!-- FRONTEND -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+        <!-- Customizable CSS -->
+        <link rel="stylesheet" href="assetsFront/css/styles.css">
+        <link rel="stylesheet" href="assetsFront/css/colors/orange.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.carousel.css">
+        <link rel="stylesheet" href="assetsFront/css/owl.transitions.css">
+        <link rel="stylesheet" href="assetsFront/css/animate.min.css">
+
+        <!-- Fonts -->
+        <link href='//fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800' rel='stylesheet' type='text/css'>
+
+        <!-- Icons/Glyphs -->
+        <link rel="stylesheet" href="assetsFront/css/font-awesome.min.css">
+
 
 		<!-- HTML5 elements and media queries Support for IE8 : HTML5 shim and Respond.js -->
 		<!--[if lt IE 9]>
@@ -91,15 +109,8 @@ header('location:my-wishlist.php');
 	</head>
     <body class="cnt-home">
 	
-<header class="header-style-1">
-
-	<!-- ============================================== TOP MENU ============================================== -->
-<!-- ============================================== TOP MENU : END ============================================== -->
-<?php include('includes/main-header.php');?>
-	<!-- ============================================== NAVBAR ============================================== -->
+<header>
 <?php include('includes/menu-bar.php');?>
-<!-- ============================================== NAVBAR : END ============================================== -->
-
 </header>
 <!-- ============================================== HEADER : END ============================================== -->
 </div><!-- /.breadcrumb -->
@@ -109,28 +120,28 @@ header('location:my-wishlist.php');
 			<div class='col-md-3 sidebar'>
 	            <!-- ================================== TOP NAVIGATION ================================== -->
 <!-- ================================== TOP NAVIGATION : END ================================== -->	            <div class="sidebar-module-container">
-	            	<h3 class="section-title">comprar por</h3>
+                    <br>
+                    <h1>comprar por</h1>
 	            	<div class="sidebar-filter">
+					<div id="top-banner-and-menu">  
+    <div class="container row outer-bottom-sm ">
+        <div class="col-xs-12 col-sm-4 col-md-3 sidemenu-holder">
+            <!-- ================================== TOP NAVIGATION ================================== -->
+            <?php include('includes/side-menu.php');?>
+            <!-- ================================== TOP NAVIGATION : END ================================== -->
+        </div><!-- /.sidemenu-holder -->
+    </div><!-- /.container -->
+</div><!-- /#top-banner-and-menu -->
 		            	<!-- ============================================== SIDEBAR CATEGORY ============================================== -->
-<div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
-	<div class="widget-header m-t-20">
-		<h4 class="widget-title">Categoria</h4>
-	</div>
+
+						<div class="sidebar-widget wow fadeInUp outer-bottom-xs ">
+
+	
+	
 	<div class="sidebar-widget-body m-t-10">
-	         <?php $sql=mysqli_query($con,"select id,categoryName  from category");
-while($row=mysqli_fetch_array($sql))
-{
-    ?>
-		<div class="accordion">
-	    	<div class="accordion-group">
-	            <div class="accordion-heading">
-	                <a href="category.php?cid=<?php echo $row['id'];?>"  class="accordion-toggle collapsed">
-	                   <?php echo $row['categoryName'];?>
-	                </a>
-	            </div>  
-	        </div>
-	    </div>
-	    <?php } ?>
+	         
+		
+	    
 	</div><!-- /.sidebar-widget-body -->
 </div><!-- /.sidebar-widget -->
 
@@ -148,7 +159,7 @@ while($row=mysqli_fetch_array($sql))
 	<div id="category" class="category-carousel hidden-xs">
 		<div class="item">	
 			<div class="image">
-				<img src="assets/images/banners/subcategoria.jpg" alt="" class="img-responsive">
+				<img src="assetsFront/images/banners/subcategoria.jpg" alt="" class="img-responsive">
 			</div>
 			<div class="container-fluid">
 				<div class="caption vertical-top text-left">
@@ -161,9 +172,9 @@ while($row=mysqli_fetch_array($sql))
 {
     ?>
 
-					<div class="excerpt hidden-sm hidden-md">
+					<h1 class="excerpt text-white">
 						<?php echo htmlentities($row['subcategory']);?>
-					</div>
+					</h1>
 			<?php } ?>
 			
 				</div><!-- /.caption -->
@@ -210,11 +221,8 @@ while ($row=mysqli_fetch_array($ret))
 				<div class="action">
 					<ul class="list-unstyled">
 						<li class="add-cart-button btn-group">
-							<button class="btn-primary icon"  type="button">
-								<i class="fa fa-shopping-cart"></i>													
-							</button>
-							<a href="category.php?page=product&action=add&id=<?php echo $row['id']; ?>">
-							<button class="btn btn-primary btn-lg " type="button">Agregar a carrito</button></a>
+						<a id="addto-cart" href="product-details.php?page=product&action=add&id=<?php echo $row['id']; ?>" class="le-button"><i class="fa fa-shopping-cart inner-right-vs"></i> Agregar al carrito</a>
+
 													
 						</li>
 	                
